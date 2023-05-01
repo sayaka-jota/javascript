@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="description" content="これはjavascriptの課題作品です。">
+    <title>Billborn</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lusitana:wght@400;700&family=Noto+Serif+JP&display=swap"
+        rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- ローディングページ -->
+    <div id="loading">
+        <p id="loading-txt">あなたにも感じてほしい。<br>ぐんぐんと高まる興奮を。</p>
+    </div>
+    <main>
+        <div id="hero">
+            <div id="hero-images">
+                <img src="images/hero1.jpg" alt="">
+                <img src="images/hero2.jpg" alt="">
+                <img src="images/hero3.jpg" alt="">
+            </div>
+            <header class="header">
+                <p><span>【ファンクラブ】</span>ブログを更新しました。</p>
+            </header>
+            <div class="ham-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav id="g-nav">
+                <ul>
+                    <li><a href="#hero">Top</a></li>
+                    <li><a href="#news-page">News</a></li>
+                    <li><a href="#abt-page">About</a></li>
+                    <li><a href="#sche-page">Schedule</a></li>
+                    <li><a href="#access-page">Access</a></li>
+                </ul>
+            </nav>
+            <h1 id="billborn">Bill Born</h1>
+            <!-- <div class="scrolldown1"><span>Scroll</span></div> -->
+        </div>
+        <div class="wrapper">
+            <div id="news-page">
+                <h2>News</h2>
+                <p><a href="blog/entry_form.php">【ファンクラブ】 ブログを更新しました。</a></p>
+                <p id="news-p2">【2023.3.23】 公演スケジュールを更新いたしました。</p>
+                <p>【2023.3.23】 公演スケジュールを更新いたしました。</p>
+            </div>
+            <div id="abt-page">
+                <h2>About</h2>
+                <p>ここは、生の歌声と演奏を楽しめる会員制レストラン。</p>
+                <p id="abt-p2">世界各国からアーティストを招き、こだわりぬいたお食事と共に<br>ラグジュアリー空間をお楽しみいただけます。</p>
+                <p id="abt-p3">ここでしか感じることの出来ない<br>至高のひと時をご提供いたします。</p>
+                <div class="img-position">
+                    <div id="abt-img1">
+                        <img src="images/about-img1.jpg" alt="">
+                    </div>
+                    <div id="abt-img2">
+                        <img src="images/about-img2.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div id="sche-page"></div>
+            <h2>Schedule</h2>
+            <div id="calender-menu">
+                <div id="prev-btn">
+
+                </div>
+                <p class="february" id="leftMonth"></p>
+                <p class="march" id="centerMonth"></p>
+                <p class="april" id="rightMonth"></p>
+                <div id="next-btn">
+                </div>
+            </div>
+
+            <div id="schedmodalule-box">
+                <div class="slide-feb">
+                    <div class="modal-overlay closed" id="model-overlay"></div> <!-- ポップアップの外側 -->
+                    <div class="modal closed" id="modal"> <!-- ポップアップ画面 -->
+                        <form name="form1">
+                            <input type="radio" name="radio" value="summary" id="summary">
+                            <label for="summary" class="radio-btn">Summary</label>
+                            <input type="radio" name="radio" value="cast" id="cast">
+                            <label for="cast" class="radio-btn">Cast</label>
+                        </form>
+                        <div class="container summary-container"> <!-- sammary -->
+                            <div class="close-button" id="close-button">
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="modal-guts"> <!-- モーダル -->
+                                <div class="check-box"></div>
+                                <h4>summary <span>白鳥の池</span></h4>
+                                <p>ジークフリート王子は、母から花嫁候補の中から妃を選ぶように言い渡された。<br>
+                                    夜の湖畔に出かけると、悪魔の呪いで白鳥に姿を変えられた娘オデットと出会い、恋に落ちます。<br>
+                                    「真実の愛を誓う男性だけが、この呪いを解くことができる」と話すオデット。</p>
+                                <figure class="feb1-summaryimg">
+                                    <img src="images/schedule1.jpg" alt="">
+                                </figure>
+                                <div class="ticket-btn">チケット好評発売中</div>
+                            </div>
+                        </div>
+                        <div class="container cast-container"> <!-- cast 初期値display:none-->
+                            <div class="close-button">
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="modal-guts">
+                                <div class="check-box"></div>
+                                <h4>Cast <span>白鳥の池</span></h4>
+                                <div class="cast-flex">
+                                    <figure class="feb1-castimg">
+                                        <img src="images/jecika.jpg" alt="">
+                                        <figcaption>ジェシカ</figcaption>
+                                        <p class="person-info">13歳から舞台演劇を始め、<br>数々の賞を受賞。</p>
+                                    </figure>
+                                    <figure class="feb1-castimg">
+                                        <img src="images/andrew.jpg" alt="">
+                                        <figcaption>アンドリュー</figcaption>
+                                        <p class="person-info">演劇好きな母親の影響を受け、<br>19歳で入団を決意。<br>今後の活躍を期待されている。</p>
+                                    </figure>
+                                    <figure class="feb1-castimg">
+                                        <img src="images/santmonica.jpg" alt="">
+                                        <figcaption>サンタモニカ</figcaption>
+                                        <p class="person-info">旅先で訪れたブロードウェイに圧倒され、<br>転職を決意。前職はダンサー。</p>
+                                    </figure>
+                                    <figure class="feb1-castimg">
+                                        <img src="images/mises.jpg" alt="">
+                                        <figcaption>ミセス</figcaption>
+                                        <p class="person-info">歌もダンスも得意中の得意。<br>歴20年のベテラン演劇者。</p>
+                                    </figure>
+                                </div>
+                                <div id="like-btn">いいね！<span id="like-counter">0</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-content open-button" id="open-button"> <!-- スケジュール内容項目 -->
+                        <div class="p-area">
+                            <p class="sche-date sche-date1"><span id="week"></span></p>
+                        </div>
+                        <div class="title-area">
+                            <h3 class="title title1"></h3>
+                            <p class="cast-info cast-info1"></p>
+                        </div>
+                        <div class="img-1st img"></div>
+                    </div>
+
+                    <div class="top-content feb2nd">
+                        <div class="p-area">
+                            <p class="sche-date sche-date2"><span id="week2"></span></p>
+                        </div>
+                        <div class="title-area">
+                            <h3 class="title title2"></h3>
+                            <p class="cast-info cast-info2"></p>
+                        </div>
+                        <div class="img-2nd img"></div>
+                    </div>
+                    <div class="top-content feb3rd">
+                        <div class="p-area">
+                            <p class="sche-date sche-date3"><span id="week3"></span></p>
+                        </div>
+                        <div class="title-area">
+                            <h3 class="title title3"></h3>
+                            <p class="cast-info cast-info3"></p>
+                        </div>
+                        <div class="img-3rd img"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="access-page">
+            <h2>Access</h2>
+            <div id="inner">
+                <ul>
+                    <li>〒000-0000<br>大阪府大阪おおさか0-0-0</li>
+                    <li>Tel : 000-0000-000</li>
+                    <li>Mail : hfoewfhwhf@fh.com</li>
+                </ul>
+            </div>
+        </div>
+        <footer>
+        </footer>
+    </main>
+    <footer class="footer">
+        <p class="copyright">© 2023 BillBorn. All Rights Reserved.</p>
+        <ul class="footer-flex">
+            <li><a href="#hero">Top</a></li>
+            <li><a href="#">サイトマップ</a></li>
+            <li><a href="#">プライバシーポリシー</a></li>
+        </ul>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
